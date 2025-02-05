@@ -1,36 +1,6 @@
 # APK Info Extractor
 
-A Python tool to extract and display information from Android APK files using the androguard library.
-
-## Quick Start
-
-1. Clone the repository:
-
-```bash
-git clone <your-repo-url>
-cd extract-apk
-```
-
-2. Create and activate virtual environment:
-
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On macOS/Linux
-# or
-.\venv\Scripts\activate  # On Windows
-```
-
-3. Install dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-4. You're ready to use the tool:
-
-```bash
-python3 apk-info.py path/to/your/app.apk
-```
+A tool to extract and display information from Android APK files, available in both Python and Node.js implementations.
 
 ## Features
 
@@ -40,62 +10,60 @@ python3 apk-info.py path/to/your/app.apk
 - List all permissions
 - Show application name
 
-## Requirements
+## Python Implementation
+
+### Requirements
 
 - Python 3.9 or higher
 - androguard 3.3.5
 
-## Setup Instructions
+### Setup Instructions
 
-1. Ensure Python 3.9+ is installed:
-
-```bash
-python3 --version
-```
-
-2. Create and activate a Python virtual environment:
+1. Create and activate virtual environment:
 
 ```bash
-# Create virtual environment
 python3 -m venv venv
-
-# Activate virtual environment
 source venv/bin/activate  # On macOS/Linux
 # or
 .\venv\Scripts\activate  # On Windows
 ```
 
-3. Install required package:
+2. Install dependencies:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-## Usage
-
-1. Activate the virtual environment (if not already activated):
-
-```bash
-source venv/bin/activate  # On macOS/Linux
-# or
-.\venv\Scripts\activate  # On Windows
-```
-
-2. Run the script:
+### Usage
 
 ```bash
 python3 apk-info.py path/to/your/app.apk
 ```
 
-Example:
+## Node.js Implementation
+
+### Requirements
+
+- Node.js 14 or higher
+- adbkit-apkreader
+
+### Setup Instructions
+
+1. Install dependencies:
 
 ```bash
-python3 apk-info.py app-release.apk
+npm install
 ```
 
-## Output
+### Usage
 
-The script will display information in the following format:
+```bash
+node apk-info.js path/to/your/app.apk
+```
+
+## Output Format
+
+Both implementations provide identical output in the following format:
 
 ```
 APK Information:
@@ -114,28 +82,46 @@ Permissions:
 
 ## Troubleshooting
 
+### Python Implementation
+
 1. If you see "No module named 'androguard'" error:
 
    - Make sure you've activated the virtual environment
    - Try reinstalling androguard: `pip install androguard==3.3.5`
 
 2. If you get API level warnings:
-
    - These are informational messages and don't affect functionality
    - The tool will use the closest available API level
 
-3. If the script hangs:
-   - The script includes a 30-second timeout
-   - For large APKs, you might need to increase the timeout in the code
+### Node.js Implementation
 
-## Script Explanation
+1. If you see module not found errors:
 
-The script uses androguard's APK class to parse and extract information from APK files. It includes:
+   - Make sure you've run `npm install`
+   - Try removing node_modules and package-lock.json and run `npm install` again
+
+2. If you get file access errors:
+   - Ensure the APK file path is correct and accessible
+   - Check if you have read permissions for the APK file
+
+## Implementation Details
+
+### Python Version
+
+The Python implementation uses androguard's APK class to parse and extract information from APK files. It includes:
 
 - Error handling for invalid APK files
-- Timeout protection (30 seconds)
 - Detailed progress logging
 - Structured output format
+
+### Node.js Version
+
+The Node.js implementation uses adbkit-apkreader to parse and extract information from APK files. It includes:
+
+- Async/await based implementation
+- Error handling for invalid APK files
+- Detailed progress logging
+- Structured output format matching the Python version
 
 ## License
 

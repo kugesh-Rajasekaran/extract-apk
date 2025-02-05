@@ -1,0 +1,23 @@
+{
+  "name": "extract-apk",
+  "version": "1.0.0",
+  "description": "A Python tool to extract and display information from Android APK files using the androguard library.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kugesh-Rajasekaran/extract-apk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kugesh-Rajasekaran/extract-apk/issues"
+  },
+  "homepage": "https://github.com/kugesh-Rajasekaran/extract-apk#readme",
+  "dependencies": {
+    "adbkit-apkreader": "^3.2.0"
+  }
+}
