@@ -1,6 +1,6 @@
 # APK Info Extractor
 
-A tool to extract and display information from Android APK files, available in both Python and Node.js implementations.
+A tool to extract and display information from Android APK files, available in both Python and Node.js implementations (Node.js is very efficient and faster).
 
 ## Features
 
